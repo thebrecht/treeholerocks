@@ -5,14 +5,14 @@ $("#btn-speak").click(function(){
     var w = $("#mywords").val();
     $("#mywords").val("");
     $("#mywords-double").text(w);
-    $(".speaking").hide("slow");
-    $(".vanishing").show();
+    $(".speaking").hide("fast");
+    $(".vanishing").show("slow");
 
     var counterId = setInterval(function(){
       timer--;
       if(timer <= 0){
-        $(".vanishing").hide();
-        $(".iknowthat").show();
+        $(".vanishing").hide("fast");
+        $(".iknowthat").show("slow");
         clearInterval(counterId);
       } else {
         $("#counter span").text(timer);
@@ -21,8 +21,8 @@ $("#btn-speak").click(function(){
 });
 
 $("#btn-speak-again").click(function(){
-    $(".iknowthat").hide();
-    $(".speaking").show();
+    $(".iknowthat").hide("fast");
+    $(".speaking").show("slow");
 });
 
 });
